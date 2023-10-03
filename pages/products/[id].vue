@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>Product details for {{ product[0].name }}</p>
+    <p class="font-bold text-[#713ABE] m-4 truncate">{{ product[0].name }}</p>
+    <p>Description: {{ product[0].description }}</p>
     <p>Price: {{ product[0].price }}</p>
     <p>Quantity: {{ product[0].quantity }}</p>
   </div>

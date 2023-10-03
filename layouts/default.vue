@@ -1,6 +1,6 @@
 <template>
   <div>
-    <header class="shadow-sm">
+    <header class="shadow-lg">
       <nav class="container mx-auto p-4 flex justify-between">
         <NuxtLink to="/" class="font-bold">Hanis' Store</NuxtLink>
         <ul class="flex gap-4">

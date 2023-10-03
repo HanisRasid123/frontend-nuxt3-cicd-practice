@@ -4,7 +4,7 @@
 <!-- https://www.youtube.com/watch?v=dvanqBUoxhc&list=PL4cUxeGkcC9haQlqdCQyYmL_27TesCGPC&index=7 -->
 <template>
   <div>
-    <h1>This is the index page</h1>
+    <h1>Hi! Welcome to my store. Please look around and select from the great products that I know you need in your life.</h1>
   </div>
 </template>
 
