@@ -1,31 +1,14 @@
 #specify base image
-FROM node:18.18.0-slim as base
-
-ARG PORT=3000
-
-ENV NODE_ENV=production
+FROM node:18.18.0-slim
 
 # set directory and copy all files over
 WORKDIR /src
 
-#-----BUILD STAGE
-FROM base as build
+ADD . /src
 
-COPY --link package.json package-lock.json ./
-RUN npm install
+RUN npm install 
+RUN npm install -g pm2@latest
 
-COPY --link . .
+EXPOSE 3000
 
-RUN npm run build
-RUN npm prune
-
-#-----RUN STAGE
-FROM base
-
-# define port number to be exposed (same port as app)
-ENV PORT=$PORT
-
-# copy over built application from build stage
-COPY --from=build /src/.output /src/.output
-
-CMD ["node", ".output/server/index.mjs"]
+CMD pm2 start npm -- run dev && tail -f /dev/null
