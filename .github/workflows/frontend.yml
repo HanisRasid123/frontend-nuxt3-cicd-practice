@@ -39,10 +39,10 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Copy to public dir
+      - name: Copy to src
         run: |
-          mkdir -p public/dist
-          cp -a dist/. public/dist/
+          mkdir -p src
+          cp -a . src
   build_and_release:
     runs-on: ubuntu-latest
     needs: build_and_test
