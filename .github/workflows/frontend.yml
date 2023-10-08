@@ -70,7 +70,7 @@ jobs:
           TAG: latest
         run: |
           docker build -t frontend_image/latest .
-          docker push $REGISTRY/$REPOSITORY/$TAG
+          docker push $REGISTRY/$REPOSITORY:$TAG
 
       - name: Download task definition
         run:
