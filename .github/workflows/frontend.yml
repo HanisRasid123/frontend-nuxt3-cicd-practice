@@ -42,6 +42,7 @@ jobs:
       - name: Copy to src
         run: |
           mkdir -p src
+          ls
           cp -a . src
   build_and_release:
     runs-on: ubuntu-latest
