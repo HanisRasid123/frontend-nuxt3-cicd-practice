@@ -9,6 +9,6 @@ ADD . /src
 RUN npm install 
 RUN npm install -g pm2@latest
 
-EXPOSE 3000
+EXPOSE 8080
 
 CMD pm2 start npm -- run dev && tail -f /dev/null
