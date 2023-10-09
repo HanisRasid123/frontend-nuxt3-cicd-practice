@@ -69,8 +69,8 @@ jobs:
           REPOSITORY: hello-world
           TAG: latest
         run: |
-          aws ec2 describe-instances --region ap-southeast-2
           docker build -t frontend_image:latest .
+          docker tag hello-world:$TAG $REGISTRY/$REPOSITORY:$TAG
           docker push $REGISTRY/$REPOSITORY:$TAG
 
       - name: Download task definition
