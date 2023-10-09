@@ -69,8 +69,8 @@ jobs:
           REPOSITORY: hello-world
           TAG: latest
         run: |
-          docker build -t frontend_image:latest .
-          docker tag hello-world:$TAG $REGISTRY/$REPOSITORY:$TAG
+          docker build -f Dockerfile -t $REGISTRY/$REPOSITORY:$TAG .
+          docker tag $REPOSITORY:$TAG $REGISTRY/$REPOSITORY:$TAG
           docker push $REGISTRY/$REPOSITORY:$TAG
 
       - name: Download task definition
