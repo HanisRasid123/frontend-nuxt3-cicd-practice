@@ -74,8 +74,9 @@ jobs:
           docker push $REGISTRY/$REPOSITORY:$TAG
 
       - name: Download task definition
-        run:
+        run: |
           aws ecs describe-task-definition --task-definition CICDPraticeFrontendTask --query taskDefinition > task-definition.json
+          ls -l task-definition.json
           
       - name: Render task definition
         id: task-def
