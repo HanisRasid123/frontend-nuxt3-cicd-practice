@@ -69,9 +69,9 @@ jobs:
           REPOSITORY: hello-world
           TAG: latest
         run: |
-          docker build -f Dockerfile -t $REGISTRY/$REPOSITORY:$TAG .
-          docker tag $REGISTRY/$REPOSITORY:$TAG $REGISTRY/$REPOSITORY:$TAG
-          docker push $REGISTRY/$REPOSITORY:$TAG
+          docker build -f Dockerfile -t ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}} .
+          docker tag ${{env.REPOSITORY}}:${{env.TAG}} ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
+          docker push ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
 
       - name: Download task definition
         run: |
@@ -83,7 +83,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           container-name: CICDPraticeFrontendContainer
-          image: $REPOSITORY:$TAG
+          image: ${{steps.build-image.outputs.image}}
           task-definition: task-definition.json
 
       - name: Deploy Amazon ECS task definition
