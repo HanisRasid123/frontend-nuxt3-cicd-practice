@@ -72,7 +72,7 @@ jobs:
           docker build -f Dockerfile -t ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}} .
           docker tag ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}} ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
           docker push ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
-          echo "name=image::${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}" >> $GITHUB_OUTPUT
+          echo "image=${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}" >> $GITHUB_OUTPUT
 
       - name: Download task definition
         run: |
