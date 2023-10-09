@@ -76,13 +76,13 @@ jobs:
       - name: Download task definition
         run: |
           aws ecs describe-task-definition --task-definition CICDPraticeFrontendTask --query taskDefinition > task-definition.json
-          ls -l task-definition.json
+          cat task-definition.json
           
       - name: Render task definition
         id: task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          container-name: frontend-container
+          container-name: CICDPraticeFrontendContainer
           image: $REGISTRY/$REPOSITORY:$TAG
           task-definition: task-definition.json
 
