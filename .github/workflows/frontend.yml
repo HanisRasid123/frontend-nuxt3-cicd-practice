@@ -69,6 +69,7 @@ jobs:
           REPOSITORY: hello-world
           TAG: latest
         run: |
+          aws ec2 describe-instances --region ap-southeast-2
           docker build -t frontend_image:latest .
           docker push $REGISTRY/$REPOSITORY:$TAG
 
