@@ -11,7 +11,7 @@
     layout: 'products'
   })
 
-  const {data: products} = await useFetch('http://localhost:8000/products')
+  const {data: products} = await useFetch('https://testcicd-api.controlpoint.healthrfid.com/products')
 </script>
 
 <style scoped>

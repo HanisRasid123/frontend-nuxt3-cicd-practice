@@ -13,7 +13,7 @@
   definePageMeta({
   layout: 'products'
 })
-  const {data: product} = await useFetch("http://localhost:8000/products/" + id, {key: id})
+  const {data: product} = await useFetch("https://testcicd-api.controlpoint.healthrfid.com/products/" + id, {key: id})
 
 </script>
 
