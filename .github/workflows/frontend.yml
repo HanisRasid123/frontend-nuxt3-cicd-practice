@@ -82,7 +82,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           container-name: frontend-container
-          image: ${{ steps.build-image.outputs.image }}
+          image: $REGISTRY/$REPOSITORY:$TAG
           task-definition: task-definition.json
 
       - name: Deploy Amazon ECS task definition
