@@ -83,7 +83,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
           container-name: CICDPraticeFrontendContainer
-          image: $REGISTRY/$REPOSITORY:$TAG
+          image: $REPOSITORY:$TAG
           task-definition: task-definition.json
 
       - name: Deploy Amazon ECS task definition
