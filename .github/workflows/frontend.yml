@@ -70,7 +70,7 @@ jobs:
           TAG: latest
         run: |
           docker build -f Dockerfile -t ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}} .
-          docker tag ${{env.REPOSITORY}}:${{env.TAG}} ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
+          docker tag ${{env.REGISTRY}}${{env.REPOSITORY}}:${{env.TAG}} ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
           docker push ${{env.REGISTRY}}/${{env.REPOSITORY}}:${{env.TAG}}
 
       - name: Download task definition
