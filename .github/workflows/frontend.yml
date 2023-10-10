@@ -37,7 +37,7 @@ jobs:
 
       - name: Install Node Dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
+        run: npm install && npm install --save nuxt
 
       - name: Generate nuxt
         run: npm run generate
