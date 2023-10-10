@@ -39,11 +39,14 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
 
-      # - name: Copy to src
-      #   run: |
-      #     mkdir -p src
-      #     ls
-      #     cp -a . src
+      - name: Generate nuxt
+        run: npm run generate
+
+      - name: Copy to public dir
+        run: |
+          mkdir -p public/dist
+          cp -a dist/. public/dist/
+          
   build_and_release:
     runs-on: ubuntu-latest
     needs: build_and_test
