@@ -12,4 +12,4 @@ RUN npm install -g pm2@latest
 EXPOSE 8080
 
 #TODO: how to run the static files???????????
-CMD pm2 start app.js && tail -f /dev/null 
+CMD pm2 --name frontendCICD serve --spa dist/. 8080 && tail -f /dev/null 
