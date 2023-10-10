@@ -11,4 +11,5 @@ RUN npm install -g pm2@latest
 
 EXPOSE 8080
 
-CMD pm2 start npx serve /dist && tail -f /dev/null
+#TODO: how to run the static files???????????
+CMD pm2 start npm -- start /dist && tail -f /dev/null 
