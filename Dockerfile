@@ -11,4 +11,4 @@ RUN npm install -g pm2@latest
 
 EXPOSE 8080
 
-CMD pm2 start npm -- run dev && tail -f /dev/null
+CMD pm2 start npm run generate && tail -f /dev/null
