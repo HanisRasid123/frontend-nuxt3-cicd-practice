@@ -1,5 +1,9 @@
+'use strict';
+
 const express = require('express');
 const app = express();
+
+app.set('env', 'production')
 
 app.use(express.static(path.join(__dirname, '.output/public'), {
 	maxAge: '1d'
