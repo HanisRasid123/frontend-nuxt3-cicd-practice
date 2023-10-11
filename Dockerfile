@@ -15,4 +15,4 @@ RUN npm run generate
 
 
 #TODO: how to run the static files???????????
-CMD pm2 start app.js 8080 && tail -f /dev/null 
+CMD pm2 start app.js && tail -f /dev/null 
