@@ -7,13 +7,14 @@ WORKDIR /src
 ADD . /src
 
 RUN cd website-nuxt && npm install 
+RUN cd website-nuxt && npm run generate
 RUN npm install -g pm2@latest
+RUN npm install 
 
 RUN mkdir -p public/dist
 RUN cp -a website-nuxt/.output/public public/dist
 EXPOSE 8080
 
-RUN npm run generate
 
 
 #TODO: how to run the static files???????????
