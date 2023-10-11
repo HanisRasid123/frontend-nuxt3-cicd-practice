@@ -5,7 +5,7 @@ const app = express();
 
 app.set('env', 'production')
 
-app.use(express.static(path.join(__dirname, '.output/public'), {
+app.use(express.static(path.join(__dirname, './website-nuxt/.output/public'), {
 	maxAge: '1d'
 }))
 

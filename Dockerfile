@@ -6,9 +6,11 @@ WORKDIR /src
 
 ADD . /src
 
-RUN npm install 
+RUN cd website-nuxt && npm install 
 RUN npm install -g pm2@latest
 
+RUN mkdir -p public/dist
+RUN cp -a website-nuxt/.output/public public/dist
 EXPOSE 8080
 
 RUN npm run generate
