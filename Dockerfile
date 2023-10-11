@@ -12,7 +12,7 @@ RUN npm install -g pm2@latest
 RUN npm install 
 
 RUN mkdir -p public/dist
-RUN cp -a website-nuxt/.output/public public/dist
+RUN cp -a website-nuxt/.output/public/. public/dist/
 EXPOSE 8080
 
 
