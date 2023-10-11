@@ -41,7 +41,9 @@ jobs:
         run: npm install && npm install --save nuxt
 
       - name: Generate nuxt
-        run: npm run generate
+        run: |
+          cd website-nuxt
+          npm run generate
 
       - name: Copy to public dir
         run: |
